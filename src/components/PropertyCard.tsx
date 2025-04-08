@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { BedDouble, Bath, Ruler } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -34,7 +35,15 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
       whileTap={{ scale: 0.98 }}
     >
       {image ? (
-        <img src={image} alt={title} className="w-full h-48 object-cover" />
+        <div className="relative w-full h-48">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
+        </div>
       ) : (
         <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-500 text-sm">
           No Image
