@@ -1,6 +1,7 @@
-"use client";
-import React from "react";
-import { motion } from "framer-motion";
+'use client';
+import React from 'react';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function HeroSection() {
   return (
@@ -13,7 +14,7 @@ export default function HeroSection() {
           className="text-4xl font-bold mb-4 drop-shadow-lg"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           Find Your Dream Home
         </motion.h1>
@@ -27,14 +28,17 @@ export default function HeroSection() {
           Discover the best properties available for rent or purchase.
         </motion.p>
 
-        <motion.button
-          className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded"
+        <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.7, duration: 0.4 }}
         >
-          Browse Listings
-        </motion.button>
+          <Link href="/listings">
+            <button className="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded transition duration-300">
+              Browse Listings
+            </button>
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
