@@ -1,4 +1,5 @@
-// src/app/listings/[id]/page.tsx
+// pages/listings/[id].tsx
+// app/listings/[id]/page.tsx
 'use client';
 
 import { notFound, useParams } from 'next/navigation';
@@ -7,7 +8,7 @@ import { motion } from 'framer-motion';
 
 const allProperties = [
   {
-    id: 'modern-villa',
+    id: '1',
     title: 'Modern Villa',
     location: 'Beverly Hills, CA',
     price: '$3,200,000',
@@ -18,7 +19,7 @@ const allProperties = [
     description: 'A luxurious modern villa located in the heart of Beverly Hills.',
   },
   {
-    id: 'cozy-cottage',
+    id: '2',
     title: 'Cozy Cottage',
     location: 'Aspen, CO',
     price: '$1,150,000',
@@ -29,7 +30,7 @@ const allProperties = [
     description: 'A charming and cozy cottage perfect for mountain living.',
   },
   {
-    id: 'luxury-apartment',
+    id: '3',
     title: 'Luxury Apartment',
     location: 'Manhattan, NY',
     price: '$2,400,000',
@@ -39,14 +40,84 @@ const allProperties = [
     size: '1,500 sqft',
     description: 'A stunning apartment with skyline views in Manhattan.',
   },
+  {
+    id: '4',
+    title: 'Beachfront House',
+    location: 'Malibu, CA',
+    price: '$4,000,000',
+    image: '/house4.jpg',
+    beds: 4,
+    baths: 3,
+    size: '3,500 sqft',
+    description: 'Experience luxury beachside living in this modern beachfront home.',
+  },
+  {
+    id: '5',
+    title: 'Downtown Condo',
+    location: 'Chicago, IL',
+    price: '$850,000',
+    image: '/house5.jpg',
+    beds: 2,
+    baths: 2,
+    size: '1,200 sqft',
+    description: 'A stylish condo in the heart of downtown Chicago.',
+  },
+  {
+    id: '6',
+    title: 'Mountain Cabin',
+    location: 'Lake Tahoe, CA',
+    price: '$1,200,000',
+    image: '/house6.jpg',
+    beds: 3,
+    baths: 2,
+    size: '2,400 sqft',
+    description: 'Rustic mountain cabin with panoramic views and cozy interiors.',
+  },
+  // 🏠 Rent Properties
+  {
+    id: '7',
+    title: 'City Loft',
+    location: 'New York, NY',
+    price: '$3,200/month',
+    image: '/house7.jpg',
+    beds: 1,
+    baths: 1,
+    size: '900 sqft',
+    description: 'A sleek city loft in the heart of Manhattan perfect for urban living.',
+  },
+  {
+    id: '8',
+    title: 'Suburban Home',
+    location: 'Austin, TX',
+    price: '$2,100/month',
+    image: '/house8.jpg',
+    beds: 3,
+    baths: 2,
+    size: '1,800 sqft',
+    description: 'Comfortable suburban home with a spacious backyard and modern amenities.',
+  },
+  {
+    id: '9',
+    title: 'Modern Studio',
+    location: 'Seattle, WA',
+    price: '$1,800/month',
+    image: '/house9.jpg',
+    beds: 1,
+    baths: 1,
+    size: '750 sqft',
+    description: 'Compact and efficient studio in a prime downtown Seattle location.',
+  },
 ];
 
 export default function PropertyDetails() {
   const params = useParams();
-  const id = decodeURIComponent(params.id as string);
+  const { id } = params;
+
   const property = allProperties.find((p) => p.id === id);
 
-  if (!property) notFound();
+  if (!property) {
+    notFound();
+  }
 
   return (
     <main className="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white min-h-screen px-4 sm:px-6 py-28">

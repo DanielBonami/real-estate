@@ -24,6 +24,7 @@ export default function BuyPage() {
         >
           <SwiperSlide>
             <PropertyCard
+              id={4}
               title="Beachfront House"
               location="Malibu, CA"
               price="$4,000,000"
@@ -32,14 +33,16 @@ export default function BuyPage() {
           </SwiperSlide>
           <SwiperSlide>
             <PropertyCard
+              id={5}
               title="Downtown Condo"
               location="Chicago, IL"
-              price="$850,000"
+              price="$8,500,000"
               image="/house5.jpg"
             />
           </SwiperSlide>
           <SwiperSlide>
             <PropertyCard
+              id={6}
               title="Mountain Cabin"
               location="Lake Tahoe, CA"
               price="$1,200,000"

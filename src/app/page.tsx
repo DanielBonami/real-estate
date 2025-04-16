@@ -1,5 +1,30 @@
-import HeroSection from "../components/HeroSection";
+// src/pages/home.tsx (or your correct page path)
+import HeroSection from "@/components/HeroSection";
 import PropertyCard from "@/components/PropertyCard";
+
+const properties = [
+  {
+    id: 1,
+    title: "Luxury Villa",
+    location: "California, USA",
+    price: 1500000,
+    image: "/house1.jpg",
+  },
+  {
+    id: 2,
+    title: "Cozy Apartment",
+    location: "New York, USA",
+    price: 850000,
+    image: "/house2.jpg",
+  },
+  {
+    id: 3,
+    title: "Modern Condo",
+    location: "Miami, USA",
+    price: 950000,
+    image: "/house3.jpg",
+  },
+];
 
 export default function Home() {
   return (
@@ -8,28 +33,17 @@ export default function Home() {
 
       <section className="max-w-7xl mx-auto px-4 py-10">
         <h2 className="text-2xl font-bold text-gray-800 mb-6">Featured Properties</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <PropertyCard
-            id="modern-villa"
-            title="Modern Villa"
-            location="Beverly Hills, CA"
-            price="$3,200,000"
-            image="/house1.jpg"
-          />
-          <PropertyCard
-            id="cozy-cottage"
-            title="Cozy Cottage"
-            location="Aspen, CO"
-            price="$1,150,000"
-            image="/house2.jpg"
-          />
-          <PropertyCard
-            id="luxury-apartment"
-            title="Luxury Apartment"
-            location="Manhattan, NY"
-            price="$2,400,000"
-            image="/house3.jpg"
-          />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {properties.map((property) => (
+            <PropertyCard
+              key={property.id}
+              id={property.id.toString()}
+              title={property.title}
+              location={property.location}
+              price={`$${property.price.toLocaleString()}`}
+              image={property.image}
+            />
+          ))}
         </div>
       </section>
 

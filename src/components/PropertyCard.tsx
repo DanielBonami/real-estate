@@ -7,10 +7,10 @@ import { BedDouble, Bath, Ruler } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface PropertyCardProps {
-  id: string;
+  id: number;
   title: string;
   location: string;
-  price: string;
+  price: string; // This is kept as string but ensure you handle it properly
   image?: string;
   beds?: number;
   baths?: number;
@@ -57,7 +57,9 @@ const PropertyCard: React.FC<PropertyCardProps> = ({
         <div className="p-4">
           <h2 className="text-xl font-semibold text-gray-900">{title}</h2>
           <p className="text-sm text-gray-600">{location}</p>
-          <p className="text-green-600 font-bold mt-2">{price}</p>
+          <p className="text-green-600 font-bold mt-2">
+            {price} {/* Simply display the price as a string */}
+          </p>
 
           <div className="flex items-center text-gray-500 text-sm gap-4 mt-3">
             <div className="flex items-center gap-1">

@@ -24,6 +24,7 @@ export default function RentPage() {
         >
           <SwiperSlide>
             <PropertyCard
+              id={7}
               title="City Loft"
               location="New York, NY"
               price="$3,200/month"
@@ -32,6 +33,7 @@ export default function RentPage() {
           </SwiperSlide>
           <SwiperSlide>
             <PropertyCard
+              id={8}
               title="Suburban Home"
               location="Austin, TX"
               price="$2,100/month"
@@ -40,6 +42,7 @@ export default function RentPage() {
           </SwiperSlide>
           <SwiperSlide>
             <PropertyCard
+              id={9}
               title="Modern Studio"
               location="Seattle, WA"
               price="$1,800/month"
