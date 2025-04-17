@@ -1,4 +1,5 @@
 // src/pages/home.tsx (or your correct page path)
+// This is a dummy comment to trigger redeploy
 import HeroSection from "@/components/HeroSection";
 import PropertyCard from "@/components/PropertyCard";
 
