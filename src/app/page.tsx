@@ -36,8 +36,8 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {properties.map((property) => (
             <PropertyCard
-              key={property.id}
-              id={property.id.toString()}
+              key={property.id}  // The unique key for React elements
+              id={property.id}    // Pass id directly as a number
               title={property.title}
               location={property.location}
               price={`$${property.price.toLocaleString()}`}
